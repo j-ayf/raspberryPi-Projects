@@ -74,7 +74,10 @@ def play_note(length):
 def play_pause(length):
     """Keeps the LED off for required amounf of time. Takes pause length as absolute number in seconds, which then gets
     modified to be the correct speed for the song by the speed_modifier variable."""
-    length *= SPEED_MODIFIER
+
+    # length of one pause depends on the bpm of the song. Off-time is subtracted from total to prevent build up of
+    # offset, especially in fast sections
+    length *= SPEED_MODIFIER - OFF_TIME
 
     sleep(length)
 
