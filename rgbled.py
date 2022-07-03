@@ -1,6 +1,8 @@
 from gpiozero import RGBLED
 from time import sleep
 
+# TODO before merge: Draw schematic and document which pin does what
+
 led = RGBLED(red=9, green=10, blue=11)
 
 led.red = 1  # full red
